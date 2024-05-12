@@ -1,0 +1,119 @@
+#inspired by hangman
+
+
+
+
+nba = "pistons"
+nfl = "texans"
+mlb = "dodgers"
+nhl = "flyers"
+
+def user_nhl():
+    points = 0
+    for i in range(len(nhl)+2):
+        letter = input("guess a letter: ")
+        x = nba.find(letter)
+        if letter in nhl:
+            print(letter[0] + " is in word")
+            points = points + 300
+            print("plus 300 points!")
+        elif letter not in nhl:
+            print(letter[0] + " not in word")
+            print("minus 150 points")
+            points = points - 150
+    final_guess = input("final guess:")
+    if final_guess == nhl:
+        print("correct".upper())
+        print("final points:" + str(points))
+    elif final_guess != nhl:
+        print("incorrect. Correct answer is " + nhl[0:])
+        print("final points:" + str(points))
+
+
+
+
+def user_nba():
+    points = 0
+    for i in range(len(nba)+2):
+        letter = input("guess a letter: ")
+        x = nba.find(letter)
+        if letter in nba:
+            print(letter[0] + " is in word")
+            points = points + 300
+            print("plus 300 points!")
+        elif letter not in nba:
+            print(letter[0] + " not in word")
+            print("minus 150 points")
+            points = points - 150
+    final_guess = input("final guess:")
+    if final_guess == nba:
+        print("correct".upper())
+        print("final points:" + str(points))
+    elif final_guess != nba:
+        print("incorrect. Correct answer is " + nba[0:])
+        print("final points:" + str(points))
+
+def user_nfl():
+    points = 0
+    for i in range(len(nfl)+2):
+        letter = input("guess a letter: ")
+        x = nfl.find(letter)
+        if letter in nfl:
+            print(letter[0] + " is in word")
+            points = points + 300
+            print("plus 300 points!")
+        elif letter not in nfl:
+            print(letter[0] + " not in word")
+            print("minus 150 points")
+            points = points - 150
+    final_guess = input("final guess: ")
+    if final_guess == nfl:
+        print("correct".swapcase())
+        print("final points: " + str(points))
+    elif final_guess != nfl:
+        print("incorrect. Correct answer is " + nfl[0:])
+        print("final points:" + str(points))
+        
+def user_mlb():
+    points = 0
+    for i in range(len(mlb)+2):
+        letter = input("guess a letter: ")
+        x = mlb.find(letter)
+        if letter in mlb:
+            print(letter[0] + " is in word")
+            points = points + 300
+            print("plus 300 points!")
+        elif letter not in mlb:
+            print(letter[0] + " not in word")
+            print("minus 150 points")
+            points = points - 150
+    final_guess = input("final guess: ")
+    if final_guess == mlb:
+        print("correct".swapcase())
+        print("final points:" + str(points))
+    elif final_guess != mlb:
+        print("incorrect. Correct answer is " + mlb[0:])
+        print("final points:" + str(points))
+
+print("Guess that team")
+category = input("Choose a category(mlb, nfl, nba, nhl): ")
+if category == "nba":
+    print("You have chosen nba")
+    print("you have "+str(len(nba)+2)+" guesses then the final guess")
+    print("you either gain or lose points depending if the letter is in the word")
+    user_nba()
+elif category == "nfl":
+    print("You have chosen nfl")
+    print("you have "+str(len(nfl)+2)+" guesses then the final guess")
+    print("you either gain or lose points depending if the letter is in the word")
+    user_nfl()
+elif category == "mlb":
+    print("You have chosen mlb")
+    print("you have "+str(len(mlb)+2)+" guesses then the final guess")
+    print("you either gain or lose points depending if the letter is in the word")
+    user_mlb()
+elif category == "nhl":
+    print("You have chosen nhl")
+    print("you have "+str(len(nhl)+2)+" guesses then the final guess")
+    print("you either gain or lose points depending if the letter is in the word")
+    user_nhl()
